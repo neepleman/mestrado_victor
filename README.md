@@ -17,6 +17,7 @@ commercial reference"*.
 |---|---|
 | [`acquisition/`](acquisition/) | Application that ran on the Raspberry Pi 5 during the tractor field test (18 April 2026). |
 | [`software_metrics/`](software_metrics/) | Instrumented variant of the same application, used for the laboratory replay benchmark (CPU, RAM, queue and decoding-time sampling). |
+| [`bench_injector/`](bench_injector/) | Arduino + MCP2515 traffic injector used to replay recorded traffic on the bench CAN network. |
 | [`data/raw/`](data/raw/) | Raw CAN recordings: tractor test (prototype and commercial reference) and the Kuhn Accura traffic used for bench replay. |
 | [`data/processed/`](data/processed/) | Decoded export of the tractor test and derived comparison files. |
 | [`data/bench/`](data/bench/) | Input, raw/decoded output and performance samples of the laboratory replay benchmark. |
@@ -62,7 +63,7 @@ All other files in `acquisition/` are unchanged since April 2026.
 
 - `src/can_injector.py` – bench tool, runs on a **Windows PC** (pyserial, `COM10`). Replays a
   `candump` log through an Arduino + MCP2515 node, preserving the original inter-frame intervals.
-  The Arduino firmware is not included in this repository.
+  The Arduino firmware is in [`bench_injector/`](bench_injector/).
 - `src/gerador_config.py` – interactive helper that builds `ui_config.json` (gauges/LEDs shown on screen)
   from `pgn_config.csv`.
 - `src/pgn_config.csv` – copy of `src/dados/pgn_config.csv` used by `gerador_config.py`.
@@ -82,6 +83,19 @@ Same application with the following differences relative to `acquisition/`:
 - minor UI layout differences (`app_window.py`, `gauges.py`, `status_leds.py`, `ui_config.json`).
 
 The output of the benchmark session is in [`data/bench/`](data/bench/).
+
+---
+
+## 2a. `bench_injector/` – bench traffic injector
+
+| File | Description |
+|---|---|
+| `injetor_arduino.cpp` | Arduino UNO sketch. Receives `ID,PAYLOAD` lines over USB serial and transmits each one as an extended (29-bit) CAN frame through an MCP2515 module (8 MHz crystal, 250 kbit/s, CS on pin 10). Uses the Seeed Studio `CAN_BUS_Shield` library (`mcp_can.h`). |
+| `injetor_serial.py` | Earlier PC-side injector (CSV input with `ID`/`Payload` columns, fixed 1 ms spacing). Superseded by `acquisition/src/can_injector.py`, which reproduces the original inter-frame intervals. |
+
+**Note on serial speed.** This sketch opens the serial port at 115200 baud, as does `injetor_serial.py`.
+`can_injector.py`, used for the benchmark, opens it at 500000 baud. The sketch version used together with
+`can_injector.py` has not yet been identified (pending confirmation by the author).
 
 ---
 
