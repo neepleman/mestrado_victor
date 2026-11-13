@@ -22,6 +22,7 @@ commercial reference"*.
 | [`data/processed/`](data/processed/) | Decoded export of the tractor test and derived comparison files. |
 | [`data/bench/`](data/bench/) | Input, raw/decoded output and performance samples of the laboratory replay benchmark. |
 | [`data/dicionario/`](data/dicionario/) | Earlier version of the PGN/SPN conversion table (see Section 3). |
+| [`analysis/`](analysis/) | Scripts, checksums and outputs that reproduce the results and figures of the article (Sections 4.1–4.5). |
 
 ---
 
@@ -138,6 +139,15 @@ The table actually used by the application is `acquisition/src/dados/pgn_config.
 
 Both tables were derived from the SAE J1939 Digital Annex (J1939DA, May 2023). The J1939DA itself is a
 copyrighted SAE publication and is **not** distributed here; it must be obtained from SAE International.
+
+---
+
+## 3a. `analysis/` – reanalysis of the article results
+
+`python3 analysis/reanalysis.py` reproduces, from the files in `data/`, the frame-sequence agreement,
+signal recalculation, inter-frame interval comparison, decoded-output accounting and laboratory benchmark
+summary reported in the article, and generates Figures 2 and 3. Input checksums are listed in
+`analysis/SHA256SUMS`. See [`analysis/README.md`](analysis/README.md).
 
 ---
 
