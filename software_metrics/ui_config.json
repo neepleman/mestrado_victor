@@ -1,0 +1,101 @@
+{
+    "gauges": [
+        {
+            "spn": 91,
+            "title": "Accelerator Pedal 1 Position",
+            "unit": "%",
+            "min": 0.0,
+            "max": 255.0
+        },
+        {
+            "spn": 512,
+            "title": "Driver's Demand Engine - Percent Torque",
+            "unit": "%",
+            "min": 0.0,
+            "max": 255.0
+        },
+        {
+            "spn": 190,
+            "title": "Engine Speed",
+            "unit": "rpm",
+            "min": 0.0,
+            "max": 255.0
+        },
+        {
+            "spn": 2432,
+            "title": "Engine Demand - Percent Torque",
+            "unit": "%",
+            "min": 0.0,
+            "max": 255.0
+        },
+        {
+            "spn": 3236,
+            "title": "Aftertreatment 1 Exhaust Gas Mass Flow Rate",
+            "unit": "kg/h",
+            "min": 0.0,
+            "max": 255.0
+        },
+        {
+            "spn": 100,
+            "title": "Engine Oil Pressure 1",
+            "unit": "kPa",
+            "min": 0.0,
+            "max": 255.0
+        },
+        {
+            "spn": 111,
+            "title": "Engine Coolant Level 1",
+            "unit": "%",
+            "min": 0.0,
+            "max": 255.0
+        },
+        {
+            "spn": 84,
+            "title": "Wheel-Based Vehicle Speed",
+            "unit": "km/h",
+            "min": 0.0,
+            "max": 255.0
+        },
+        {
+            "spn": 183,
+            "title": "Engine Fuel Rate",
+            "unit": "l/h",
+            "min": 0.0,
+            "max": 255.0
+        },
+        {
+            "spn": 185,
+            "title": "Engine Average Fuel Economy",
+            "unit": "km/L",
+            "min": 0.0,
+            "max": 255.0
+        }
+    ],
+    "leds": [
+        {
+            "spn": 559,
+            "title": "Accelerator Pedal Kickdown Switch",
+            "max_val": 3
+        },
+        {
+            "spn": 985,
+            "title": "A/C High Pressure Fan Switch",
+            "max_val": 3
+        },
+        {
+            "spn": 70,
+            "title": "Parking Brake Switch",
+            "max_val": 3
+        },
+        {
+            "spn": 597,
+            "title": "Brake Switch",
+            "max_val": 3
+        },
+        {
+            "spn": 598,
+            "title": "Clutch Switch",
+            "max_val": 3
+        }
+    ]
+}
