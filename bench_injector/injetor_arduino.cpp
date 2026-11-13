@@ -6,7 +6,7 @@ const int spiCSPin = 10;
 MCP_CAN CAN(spiCSPin);
 
 void setup() {
-    Serial.begin(115200);
+    Serial.begin(500000);
     
     // Configuração para Rede J1939 de Tratores (250kbps, oscilador de 8MHz padrão do módulo chinês)
     while (CAN_OK != CAN.begin(CAN_250KBPS, MCP_8MHz)) {
