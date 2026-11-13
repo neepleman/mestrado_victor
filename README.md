@@ -170,9 +170,9 @@ Logs are written to `acquisition/logs/`.
 
 ## 5. Archived versions
 
-- Release used in the article: tag `v1.0.0` of this repository, archived on Zenodo
-  (DOI: *to be added after release*).
-- Dissertation-submission archive: https://doi.org/10.5281/zenodo.20532086
+- Release `v1.0.0` (used in the article and the dissertation), archived on Zenodo:
+  https://doi.org/10.5281/zenodo.20532086
+- All versions (concept DOI, always resolves to the latest version): https://doi.org/10.5281/zenodo.20532085
 
 ## 6. License
 
