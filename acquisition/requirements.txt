@@ -1,0 +1,5 @@
+customtkinter
+Pillow
+bitstring
+# Bench tool src/can_injector.py (runs on a Windows PC, not on the Pi):
+# pyserial
